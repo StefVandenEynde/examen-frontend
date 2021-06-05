@@ -294,11 +294,18 @@ footer{
 .sociam{
     margin-right: 15px;
 }
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    padding-right: 50px;
+  }
 
   /* Responsive layout - makes a one column layout instead of a two-column layout */
-  @media (max-width: 800px) {
-    .flex-item-right, .flex-item-left .footerflex4 .footerflex3 .footerflex2 .footerflex1{
-      flex: 100%;
+  @media screen and (max-width: 575px) {
+    .conatiner_1, .container_2, .container_3, .container_4, .container_5, .Container_6, .container_7{
+     flex-direction: column;
     }
 .topnav {
     overflow: hidden;
