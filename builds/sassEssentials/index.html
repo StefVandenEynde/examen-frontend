@@ -13,31 +13,41 @@
 </head>
 <body>
   <div class="full-container"> 
-    <header>
-      <div class="topnav conatiner_1">
-        <p class="H3_White flex-item-left">LOGO</p>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks" class="flex-item-center">
-          <a href="#">About</a>
-          <a href="#">Portfolio</a>
-          <a href="#">Blog</a>
-          <a href="#" id="margin">Contact</a>
-          <button class="buttonwhite flex-item-right">Sign Up</button>
+  <header class="header">
+    <nav class="navbar">
+        <a href="#" class="nav-logo H3_White">LOGO</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link text_bigWhite">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text_bigWhite">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text_bigWhite">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text_bigWhite">Contact</a>
+            </li>
+            <li class="nav-item">
+              <button class="buttonwhite flex-item-right draw">Sign Up</button>
+          </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-  </header>
+    </nav>
+</header>
   <div class="conatiner_1">
     <div class="flex-item-left flex-align-center">
       <p class="H5_White">Delectus instructior</p>
       <h1 class="H2">Vide legimus <br> consectetuer</h1>
  <br><br>
     <form action="submit">
-      <input type="text " value="Email" class="input">
-      <input type="submit" value="submit" class="buttonwhite">
+      <input type="text " value="Email" class="input flex-item-left">
+      <input type="submit" value="submit" class="button flex-item-right">
     </form>
     </div>
   <div class="flex-item-right">
@@ -192,13 +202,22 @@
   </div>
      
   <script>
-    function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+}
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
 }
   </script>
 </footer>
